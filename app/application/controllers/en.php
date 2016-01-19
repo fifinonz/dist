@@ -21,7 +21,7 @@ class En extends CI_Controller {
 	public function index()
 	{
 		$this->data['title'] 	=  '';
-		$this->data['content'] 	=  '';
+		$this->data['content'] 	=  'home';
 
 		$this->_load_view();
 	}
