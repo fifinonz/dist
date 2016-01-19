@@ -18,39 +18,62 @@ class En extends CI_Controller {
 		$this->load->view('inc/_tmp',$this->data);
 	}
 
-	public function index()
-	{
+	public function index(){
+		#call a specific function
+		$this->home();
+	}
+
+	#Default homepage
+	public function home(){
 		$this->data['title'] 	=  '';
 		$this->data['content'] 	=  'home';
 
 		$this->_load_view();
 	}
 
-	public function signin()
-	{
+	public function signin(){
 		$this->data['title'] 	=  '';
-		$this->data['content'] 	=  '';
+		$this->data['content'] 	=  'signin';
 
 		$this->_load_view();
 	}
-	public function signup()
-	{
+	public function signup(){
 		$this->data['title'] 	=  '';
-		$this->data['content'] 	=  '';
+		$this->data['content'] 	=  'signup';
 
 		$this->_load_view();
 	}
-	public function signrs()
-	{
+	public function signrs(){
 		#logic to resolve signin
+		$config = array(
+			array(
+				'label' => '',
+				'field' => '',
+				'rules' => ''
+			),
+			array(
+				'label' => '',
+				'field' => '',
+				'rules' => ''
+			),
+			array(
+				'label' => '',
+				'field' => '',
+				'rules' => ''
+			)
+		);
+
+		$this->form_validation->set_rules($config)
+
+		if($this->form_validation->run() == true){
+			#Do something when validation is passed
+		} else {}
 	}
-	public function signuprs()
-	{
+	public function signuprs(){
 		#logic to resolve signup
 	}
 
-	public function contactus()
-	{
+	public function contactus()	{
 		$this->data['title'] 	=  'Contact us Page';
 		$this->data['content'] 	=  'contactus';
 
