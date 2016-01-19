@@ -63,6 +63,37 @@ class En extends CI_Controller {
 
 		$this->_load_view();
 	}
+
+	#mailer function shell - uses the ci mailer modules
+	#send mail
+	public function mailer($studentname,$email){
+
+		$config = array(
+			'mailtype' => '',
+			'protocol'	=>'',
+			'smtp_host'	=>'',
+			'smtp_post'	=>'',
+			'smtp_user'=>'',
+			'smtp_pass'=>'',
+		);
+
+		$this->load->library('email', $config);
+
+		#quack stuff :(
+		$this->email->set_newline("\r\n");
+
+		$this->email->from('','');
+		$this->email->reply_to('','');
+		$this->email->to($email,$studentname);
+		$this->email->subject('');
+		$this->email->message('sample message');
+
+		if($this->email->send()){
+			#message if mail is sent
+		} else {
+			#what happens if mail is not sent ?
+		}
+	}
 }
 
 /* End of file en.php */
