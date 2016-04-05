@@ -2,8 +2,8 @@
   <div class="query">
       <p style="padding-bottom:10px;">
           <center>
-             A Java (Food industry) HR management system simulation<br>
-             that uses Distributed Database principles
+             Simulation of The Java House HR management system <br>
+             to demonstrate Distributed Database principles
           </center>
       </p>
       <h4>Insert Query</h4>
